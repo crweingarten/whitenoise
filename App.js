@@ -1,11 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import catalog from './src/Catalog'
+import MusicPlayer from './src/MusicPlayer'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text>oblivionizer</Text>
+      <MusicPlayer catalog={catalog}/>
     </View>
   );
 }
@@ -17,4 +18,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });
