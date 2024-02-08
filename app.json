@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cweingarten.whitenoise"
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +26,21 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Sniglet-Regular.otf"
+          ]
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "292ce42c-a46b-4341-84c5-9a44e6b22a32"
+      }
     }
   }
 }

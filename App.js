@@ -1,22 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native';
-import catalog from './src/Catalog'
-import MusicPlayer from './src/MusicPlayer'
+import { StyleSheet } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import HomeScreen from './src/HomeScreen'
+import ReleasePage from './src/ReleasePage';
+import About from './src/About';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>oblivionizer</Text>
-      <MusicPlayer catalog={catalog}/>
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+    <NavigationContainer>
+    <Stack.Navigator>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="ReleasePage" component={ReleasePage} />
+        <Stack.Screen name="About" component={About} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-});
