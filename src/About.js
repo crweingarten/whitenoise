@@ -15,8 +15,10 @@ export default function About({ route, navigation }) {
         <Logo/>
         <GestureDetector gesture={Gesture.Simultaneous(swipeLeft, swipeRight)}>
           <View >
-        <Text style={styles.copy}>fuzzzel is an ios white noise app created and curated by christopher weingarten.</Text>
-        <Text style={styles.copy}>questions, comments or opportunities: <Text style={styles.sleep}>fuzzzel@gmail.com</Text></Text>
+        <Text style={styles.copy}>fuzzzel is a bespoke ios white noise app featuring some of our favorite musicians and sound artists</Text>
+        <Text style={styles.copy}>though these sounds are intended to be utilitarian, we put no limitations nor preference on how you should enjoy them. </Text>
+        <Text style={styles.copy}>feel free to use fuzzzel for background noise, sleep aid, meditation, concentration, home atmosphere, deep listening, party compliment or simply part of your everyday music rotation.</Text>
+        <Text style={styles.copy}>questions, comments or opportunities:{"\n"} <Text style={styles.sleep}>fuzzzel@gmail.com{"\n"}@1000TimesYes</Text></Text>
         </View></GestureDetector>
       </View> 
   );
@@ -31,13 +33,14 @@ const styles = StyleSheet.create({
   },
 
   copy: {
-    height: '25%',
+    // height: '15%',
     backgroundColor: '#000',
     color: '#fff',
     fontFamily: 'Menlo-Bold',
     fontSize: 14,
     letterSpacing: 2,
     textAlign: 'center',
+    padding: 8,
   },
 
   sleep: {

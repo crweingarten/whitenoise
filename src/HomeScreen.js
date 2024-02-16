@@ -1,16 +1,33 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useContext } from 'react';
 import catalog from './Catalog'
 import Logo from './Logo'
-import MusicPlayer from './MusicPlayer'
+import NowPlayingContext from './NowPlayingContext';
 
 export default function HomeScreen({ navigation }) {
 
   const { navigate } = navigation;
+  const { playSound, setPlaying }  = useContext(NowPlayingContext); 
+
+  function handlePress(track) {
+    playSound(track.path)
+    setPlaying(track)
+    navigate('ReleasePage', { track: track })}
+
+  const playButtons = catalog.map(track =>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => {handlePress(track)}}
+      underlayColor='#000'
+      key={track.cat}>
+      <Text style={styles.artist}>{track.artist}</Text>
+    </TouchableOpacity>
+  );
 
   return (
     <View style={styles.container}>
       <Logo />
-      <MusicPlayer catalog={catalog} navigation={navigation} />
+      {playButtons}
       <TouchableOpacity
         onPress={() => navigate('About')}>
         <Text style={styles.about}>about</Text>
@@ -41,4 +58,20 @@ const styles = StyleSheet.create({
     paddingTop: 100,
     fontSize: 8
   },
+
+  button: {
+    backgroundColor: '#80aaed',
+    width: '90%',
+    height: '7%',
+    borderRadius: '25',
+    marginTop: "1%",
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  artist: {
+    color: '#fff',
+    fontFamily: 'Menlo',
+    letterSpacing: 2,
+  }
 });

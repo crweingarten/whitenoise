@@ -18,11 +18,12 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    height: '18%',
+    // height: '25%',
     width: '100%',
     backgroundColor: '#000',
     color: '#fff',
-    fontFamily: 'Sniglet-Regular',
+    paddingTop: 40,
+    // fontFamily: 'Sniglet-Regular',
     fontSize: 40
   },
 
