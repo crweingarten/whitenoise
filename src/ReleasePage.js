@@ -17,11 +17,12 @@ export default function ReleasePage({ route, navigation }) {
             playSound(nextUp.path)
             navigate('ReleasePage', { track: nextUp })
         }
-        else { navigate('HomeScreen') }
+        else { navigate('HomeScreen')
+        setSound() }
     });
     const swipeRight = Gesture.Fling().direction(Directions.RIGHT).onEnd(() => {
         navigate('HomeScreen')
-        setSound(undefined)
+        setSound()
     });
 
 

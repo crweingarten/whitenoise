@@ -41,8 +41,8 @@ export default function Navigation() {
         const { sound } = await Audio.Sound.createAsync(path);
         setSound(sound);
         console.log('Playing');
-        // await sound.playFromPositionAsync(5000);
-        await sound.playAsync();
+        await sound.playFromPositionAsync(5000);
+        // await sound.playAsync();
         sound.setIsLoopingAsync(true) 
     }
 
