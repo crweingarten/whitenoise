@@ -3,27 +3,24 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Logo() {
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.logo}>fu<Text style={styles.sleep}>zzz</Text>el</Text>
-      <Text style={styles.copy}>artisinal white noise</Text>
+      <Text style={styles.copy}>artisanal white noise</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#000',
-    justifyContent: 'center',
+    width: '100%',
   },
 
   logo: {
-    // height: '25%',
     width: '100%',
     backgroundColor: '#000',
     color: '#fff',
     paddingTop: 40,
-    // fontFamily: 'Sniglet-Regular',
+    fontFamily: 'Sniglet-Regular',
     fontSize: 40
   },
 

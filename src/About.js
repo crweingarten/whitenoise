@@ -16,8 +16,8 @@ export default function About({ route, navigation }) {
         <GestureDetector gesture={Gesture.Simultaneous(swipeLeft, swipeRight)}>
           <View >
         <Text style={styles.copy}>fuzzzel is a bespoke ios white noise app featuring some of our favorite musicians and sound artists</Text>
-        <Text style={styles.copy}>though these sounds are intended to be utilitarian, we put no limitations nor preference on how you should enjoy them. </Text>
-        <Text style={styles.copy}>feel free to use fuzzzel for background noise, sleep aid, meditation, concentration, home atmosphere, deep listening, party compliment or simply part of your everyday music rotation.</Text>
+        <Text style={styles.copy}>though these sounds are intended to be utilitarian, we offer no preference on how you should experience them. </Text>
+        <Text style={styles.copy}>feel free to use fuzzzel for background noise, sleep aid, meditation, concentration, home atmosphere, deep listening, party accompaniment or part of your everyday music rotation.</Text>
         <Text style={styles.copy}>questions, comments or opportunities:{"\n"} <Text style={styles.sleep}>fuzzzel@gmail.com{"\n"}@1000TimesYes</Text></Text>
         </View></GestureDetector>
       </View> 
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
   },
 
   copy: {
-    // height: '15%',
     backgroundColor: '#000',
     color: '#fff',
     fontFamily: 'Menlo-Bold',
