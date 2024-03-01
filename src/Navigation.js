@@ -27,7 +27,7 @@ export default function Navigation() {
 
     const homeButton = ({ navigation }) => ({
         headerLeft: () => (
-            <TouchableOpacity style={{flex: 1, alignItems: 'center'}} onPress={() => {navigation.navigate('HomeScreen'), setSound()}}><Icon
+            <TouchableOpacity onPress={() => {navigation.navigate('HomeScreen'), setSound()}}><Icon
                 name='home'
                 type='font-awesome'
                 color='#80aaed'

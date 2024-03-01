@@ -3,6 +3,7 @@ import { StyleSheet, Image, Text, View } from 'react-native';
 import { GestureDetector, Gesture, Directions } from 'react-native-gesture-handler';
 import NowPlayingContext from './NowPlayingContext';
 import catalog from './Catalog'
+import { styles }from './styles'
 
 
 export default function ReleasePage({ route, navigation }) {
@@ -25,50 +26,13 @@ export default function ReleasePage({ route, navigation }) {
         setSound()
     });
 
-
     return (
         <View style={styles.container}>
             <GestureDetector gesture={Gesture.Simultaneous(swipeLeft, swipeRight)}>
                 <Image style={styles.coverart} source={track.cover} />
             </GestureDetector>
-            <Text style={styles.artist}>{nowPlaying.artist}</Text>
-            <Text style={styles.title}>"{nowPlaying.title}"</Text>
+            <Text style={styles.nowPlaying}>{nowPlaying.artist}</Text>
+            <Text style={[styles.nowPlaying, {fontFamily: 'Menlo', fontSize: 14}]}>"{nowPlaying.title}"</Text>
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#000',
-    },
-
-    coverart: {
-        maxHeight: '80%',
-        width: 'auto'
-    },
-
-    artist: {
-        height: '4%',
-        paddingTop: '1%',
-        width: '100%',
-        backgroundColor: '#000',
-        color: '#fff',
-        fontFamily: 'Menlo-Bold',
-        fontSize: 18,
-        letterSpacing: 5,
-        textAlign: 'right',
-    },
-
-    title: {
-        height: '4%',
-        paddingTop: '1%',
-        width: '100%',
-        backgroundColor: '#000',
-        color: '#fff',
-        fontFamily: 'Menlo',
-        fontSize: 14,
-        letterSpacing: 5,
-        textAlign: 'right',
-    }
-});
