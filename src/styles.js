@@ -61,7 +61,7 @@ export const styles = StyleSheet.create({
     },
 
     coverart: {
-        maxHeight: '80%',
+        height: '80%',
         width: 'auto'
     },
 

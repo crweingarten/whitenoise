@@ -1,15 +1,17 @@
 import { useContext } from 'react';
-import { StyleSheet, Image, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { Icon } from '@rneui/themed';
 import { GestureDetector, Gesture, Directions } from 'react-native-gesture-handler';
 import NowPlayingContext from './NowPlayingContext';
 import catalog from './Catalog'
-import { styles }from './styles'
+import { styles } from './styles'
 
 
 export default function ReleasePage({ route, navigation }) {
     const { navigate } = navigation;
     const { track } = route.params;
-    const { setSound, playSound, nowPlaying, setPlaying }  = useContext(NowPlayingContext); 
+    const { setSound, playSound, nowPlaying, setPlaying } = useContext(NowPlayingContext);
 
     const swipeLeft = Gesture.Fling().direction(Directions.LEFT).onEnd(() => {
         const nextUp = catalog.find((track) => track.cat === Number(nowPlaying.cat + 1));
@@ -18,8 +20,10 @@ export default function ReleasePage({ route, navigation }) {
             playSound(nextUp.path)
             navigate('ReleasePage', { track: nextUp })
         }
-        else { navigate('HomeScreen')
-        setSound() }
+        else {
+            navigate('HomeScreen')
+            setSound()
+        }
     });
     const swipeRight = Gesture.Fling().direction(Directions.RIGHT).onEnd(() => {
         navigate('HomeScreen')
@@ -32,7 +36,14 @@ export default function ReleasePage({ route, navigation }) {
                 <Image style={styles.coverart} source={track.cover} />
             </GestureDetector>
             <Text style={styles.nowPlaying}>{nowPlaying.artist}</Text>
-            <Text style={[styles.nowPlaying, {fontFamily: 'Menlo', fontSize: 14}]}>"{nowPlaying.title}"</Text>
+            <Text style={[styles.nowPlaying, { fontFamily: 'Menlo', fontSize: 14 }]}>"{nowPlaying.title}"</Text>
+
+
+            {/* <TouchableOpacity onPress={() => { navigation.navigate('HomeScreen') }}><Text style={styles.nowPlaying}> s<Icon
+                name='info-circle'
+                type='font-awesome'
+                color='#fff'
+            /></Text></TouchableOpacity> */}
         </View>
     );
 }

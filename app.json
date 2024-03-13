@@ -32,7 +32,7 @@
         "expo-font",
         {
           "fonts": [
-            "./assets/fonts/Sniglet-Regular.otf"
+            "./assets/fonts/Raleway-Bold.otf"
           ]
         }
       ]

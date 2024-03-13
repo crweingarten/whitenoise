@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { useContext } from 'react';
 import catalog from './Catalog'
 import Logo from './Logo'
