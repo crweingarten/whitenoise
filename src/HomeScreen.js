@@ -17,7 +17,7 @@ export default function HomeScreen({ navigation }) {
   }
 
   const playButtons = catalog.map(track =>
-    <><TouchableOpacity
+    <View><TouchableOpacity
       style={[styles.button, { backgroundColor: track.color }]}
       onPress={() => { handlePress(track) }}
       underlayColor='#000'
@@ -25,7 +25,7 @@ export default function HomeScreen({ navigation }) {
       <Text style={[styles.copy, { fontFamily: 'Menlo' }]}>{track.description}</Text>
     </TouchableOpacity>
       <Text style={styles.artist}>[by {track.artist}]</Text>
-    </>
+    </View>
   );
 
   const legalStyle = {

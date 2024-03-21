@@ -5,12 +5,12 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: '100%',
-        backgroundColor: '#000',
+        backgroundColor: 'black',
         // alignItems: 'center',
     },
 
     logo: {
-        color: '#fff',
+        color: 'white',
         paddingTop: 40,
         fontFamily: 'Raleway-Bold',
         fontSize: 40,
@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     },
 
     copy: {
-        color: '#fff',
+        color: 'white',
         fontFamily: 'Menlo-Bold',
         fontSize: 14,
         letterSpacing: 2,
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     },
 
     artist: {
-        color: '#fff',
+        color: 'white',
         fontFamily: 'Menlo',
         fontStyle: 'italic',
         letterSpacing: 2,
@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
 
     button: {
         width: '90%',
-        height: '7%',
+        height: 60,
         borderRadius: '25',
         marginTop: "1%",
         alignItems: 'center',
@@ -67,16 +67,38 @@ export const styles = StyleSheet.create({
 
     nowPlaying:
     {
-        height: '4%',
-        paddingTop: '1%',
+        paddingTop: 10,
         width: '100%',
-        backgroundColor: '#000',
-        color: '#fff',
+        backgroundColor: 'black',
+        color: 'white',
         fontFamily: 'Menlo-Bold',
         fontSize: 18,
         letterSpacing: 5,
         textAlign: 'right',
-    }
+    },
 
-});
+    centeredView: {
+        flex: 1,
+        justifyContent: 'flex-end',
+    },
+
+    modalView: {
+        backgroundColor: 'black',
+        padding: 30,
+        width: '100%',
+        height: '60%'
+
+    },
+
+    infoHeader: {
+        color: '#80aaed',
+        paddingTop: 10,
+        fontFamily: 'Menlo',
+        fontSize: 40,
+        // alignSelf: 'flex-start',
+    },
+}
+
+
+);
 
