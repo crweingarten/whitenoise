@@ -17,22 +17,21 @@ export default function HomeScreen({ navigation }) {
   }
 
   const playButtons = catalog.map(track =>
-    <View><TouchableOpacity
+   <View key={track.cat}><TouchableOpacity
       style={[styles.button, { backgroundColor: track.color }]}
       onPress={() => { handlePress(track) }}
       underlayColor='#000'
-      key={track.cat}>
+      >
       <Text style={[styles.copy, { fontFamily: 'Menlo' }]}>{track.description}</Text>
     </TouchableOpacity>
-      <Text style={styles.artist}>[by {track.artist}]</Text>
-    </View>
+      <Text style={styles.artist}>[by {track.artist}]</Text></View>
   );
 
   const legalStyle = {
     ...styles.copy,
     fontFamily: 'Menlo',
     fontSize: 8,
-    paddingTop: 100,
+    paddingTop: 50,
   }
 
   return (

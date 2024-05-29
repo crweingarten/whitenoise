@@ -12,7 +12,6 @@ export default function ReleasePage({ route, navigation }) {
     const { track } = route.params;
     const { setSound, playSound, nowPlaying, setPlaying } = useContext(NowPlayingContext);
     const [modalVisible, setModalVisible] = useState(false);
-    console.log(nowPlaying)
 
     const swipeLeft = Gesture.Fling().direction(Directions.LEFT).onEnd(() => {
         const nextUp = catalog.find((track) => track.cat === Number(nowPlaying.cat + 1));
@@ -36,14 +35,16 @@ export default function ReleasePage({ route, navigation }) {
             <GestureDetector gesture={Gesture.Simultaneous(swipeLeft, swipeRight)}>
                 <Image style={styles.coverart} source={track.cover} />
             </GestureDetector>
-            <Text style={styles.nowPlaying}>{nowPlaying.artist}</Text>
-            <Text style={[styles.nowPlaying, { fontFamily: 'Menlo', fontSize: 14 }]}>"{nowPlaying.title}"</Text>
-            <Pressable onPress={() => { setModalVisible(true) }}><Text style={styles.nowPlaying}> <Icon
-                name='info-circle'
-                type='font-awesome'
-                color='#80aaed'
-                style={{ paddingTop: 15, paddingRight: 10 }}
-            /></Text></Pressable>
+            <Pressable onPress={() => { setModalVisible(true) }}>
+                <Text style={styles.nowPlaying}>{nowPlaying.artist}</Text>
+                <Text style={[styles.nowPlaying, { fontFamily: 'Menlo', fontSize: 14 }]}>"{nowPlaying.title}"</Text>
+                <Text style={styles.nowPlaying}> <Icon
+                    name='info-circle'
+                    type='font-awesome'
+                    color='#80aaed'
+                    style={{ paddingTop: 15, paddingRight: 10 }}
+                /></Text>
+            </Pressable>
             <View style={styles.centeredView}>
                 <Modal
                     animationType="fade"
@@ -54,21 +55,35 @@ export default function ReleasePage({ route, navigation }) {
                         setModalVisible(!modalVisible);
                     }}
                 >
-                    <View style={styles.centeredView}>
+
+                    <Pressable style={styles.centeredView}
+                        onPress={() => {setModalVisible(!modalVisible)
+                            console.log("close")}
+                            
+                        }>
+
+
+
+
+
                         <View style={styles.modalView}>
-                            <Pressable
-                                onPress={() => setModalVisible(!modalVisible)}>
-                                <Text><Icon
-                                    name='close'
-                                    type='font-awesome'
-                                    color='#80aaed'
-                                /></Text>
-                            </Pressable>
+
+                            <Text><Icon
+                                name='close'
+                                type='font-awesome'
+                                color='#80aaed'
+                            /></Text>
+
                             <ScrollView>
-                                <Text style={styles.infoHeader}>{nowPlaying.artist}:</Text>
-                                <Text style={styles.copy}>{nowPlaying.info}</Text></ScrollView>
+                                <Text style={styles.copy}>{nowPlaying.info}</Text>
+                                <Text style={[styles.copy, { color: '#80aaed', alignSelf: 'flex-end' }]}>
+                                    — {nowPlaying.artist}</Text></ScrollView>
+
                         </View>
-                    </View>
+
+
+
+                    </Pressable>
                 </Modal>
             </View>
         </View>

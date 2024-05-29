@@ -6,14 +6,14 @@ export const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         backgroundColor: 'black',
-        // alignItems: 'center',
     },
 
     logo: {
         color: 'white',
-        paddingTop: 40,
         fontFamily: 'Raleway-Bold',
-        fontSize: 40,
+        letterSpacing: 10,
+        fontSize: 70,
+        fontWeight: '900',
         alignSelf: 'flex-start',
     },
 
@@ -90,13 +90,6 @@ export const styles = StyleSheet.create({
 
     },
 
-    infoHeader: {
-        color: '#80aaed',
-        paddingTop: 10,
-        fontFamily: 'Menlo',
-        fontSize: 40,
-        // alignSelf: 'flex-start',
-    },
 }
 
 

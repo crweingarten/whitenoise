@@ -12,7 +12,7 @@ export default function Logo() {
 
   return (
     <View>
-      <Text style={styles.logo}>fu<Text style={styles.sleep}>zzz</Text>el</Text>
+      <Text style={styles.logo}>fu<Text style={styles.sleep}>zzz</Text>el...</Text>
       <Text style={subheadStyle}>artisanal white noise</Text>
     </View>
   );
