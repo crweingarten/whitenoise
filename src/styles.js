@@ -1,53 +1,54 @@
 import { StyleSheet } from 'react-native';
 
+const fuzzBlack = '#141414'
 
 export const styles = StyleSheet.create({
+
     container: {
         flex: 1,
         width: '100%',
-        backgroundColor: 'black',
+        backgroundColor: fuzzBlack,
     },
 
     logo: {
         color: 'white',
-        fontFamily: 'Raleway-Bold',
+        fontFamily: 'ArialRoundedMTBold',
         letterSpacing: 10,
         fontSize: 70,
         fontWeight: '900',
-        alignSelf: 'flex-start',
+        textAlign: 'center',
     },
 
     copy: {
         color: 'white',
-        fontFamily: 'Menlo-Bold',
-        fontSize: 14,
+        fontFamily: 'ArialMT',
+        fontSize: 15,
         letterSpacing: 2,
         textAlign: 'center',
         padding: 8,
+        fontWeight: '450'
     },
 
     artist: {
         color: 'white',
-        fontFamily: 'Menlo',
+        fontFamily: 'ArialMT',
         fontStyle: 'italic',
         letterSpacing: 2,
-        fontSize: 12,
+        fontSize: 14,
+        fontWeight: '200',
+        opacity: '0.9',
         alignSelf: 'flex-end',
         paddingTop: 5,
         paddingBottom: 15,
         marginRight: 20
     },
 
-    sleep: {
-        color: '#80aaed',
-    },
-
     about: {
-        color: '#80aaed',
-        fontFamily: 'Menlo-Bold',
+        fontFamily: 'ArialMT',
         letterSpacing: 12,
         paddingTop: 30,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        fontWeight: '600'
     },
 
     button: {
@@ -69,12 +70,13 @@ export const styles = StyleSheet.create({
     {
         paddingTop: 10,
         width: '100%',
-        backgroundColor: 'black',
+        backgroundColor: fuzzBlack,
         color: 'white',
-        fontFamily: 'Menlo-Bold',
+        fontFamily: 'ArialMT',
         fontSize: 18,
         letterSpacing: 5,
         textAlign: 'right',
+        fontWeight: '800'
     },
 
     centeredView: {
@@ -83,13 +85,15 @@ export const styles = StyleSheet.create({
     },
 
     modalView: {
-        backgroundColor: 'black',
+        backgroundColor: fuzzBlack,
         padding: 30,
         width: '100%',
         height: '60%'
 
     },
 
+    fuzzBlue: { color: '#B2D3FF' },
+    fuzzBlack: fuzzBlack,
 }
 
 

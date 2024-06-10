@@ -9,6 +9,8 @@ import ReleasePage from './ReleasePage';
 import About from './About';
 import NowPlayingContext from './NowPlayingContext';
 import { Audio } from 'expo-av';
+import { styles } from './styles'
+
 
 const Stack = createNativeStackNavigator();
 
@@ -16,8 +18,8 @@ const blackHeader = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        card: '#000',
-        text: '#000',
+        card: styles.fuzzBlack,
+        text: styles.fuzzBlack,
     },
 };
 
@@ -27,12 +29,12 @@ export default function Navigation() {
 
     const homeButton = ({ navigation }) => ({
         headerLeft: () => (
-            <TouchableOpacity onPress={() => {navigation.navigate('HomeScreen'), setSound()}}><Icon
+            <TouchableOpacity onPress={() => {navigation.navigate('HomeScreen'), setSound()}}>
+                <Icon
                 name='home'
-                type='font-awesome'
-                color='#80aaed'
-            /></TouchableOpacity>
-    
+                color={styles.fuzzBlue.color}
+                />
+            </TouchableOpacity>
         ),
     })
     
@@ -42,7 +44,6 @@ export default function Navigation() {
         setSound(sound);
         console.log('Playing');
         await sound.playFromPositionAsync(5000);
-        // await sound.playAsync();
         sound.setIsLoopingAsync(true) 
     }
 

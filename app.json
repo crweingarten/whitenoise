@@ -4,7 +4,7 @@
     "slug": "whitenoise",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logoicon.jpg",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -25,18 +25,8 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logoicon.jpg"
     },
-    "plugins": [
-      [
-        "expo-font",
-        {
-          "fonts": [
-            "./assets/fonts/Raleway-Bold.otf"
-          ]
-        }
-      ]
-    ],
     "extra": {
       "eas": {
         "projectId": "292ce42c-a46b-4341-84c5-9a44e6b22a32"

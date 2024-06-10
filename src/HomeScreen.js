@@ -1,5 +1,6 @@
 import { Text, TouchableOpacity, View } from 'react-native';
 import { useContext } from 'react';
+import { LinearGradient } from 'expo-linear-gradient';
 import catalog from './Catalog'
 import Logo from './Logo'
 import NowPlayingContext from './NowPlayingContext';
@@ -17,32 +18,35 @@ export default function HomeScreen({ navigation }) {
   }
 
   const playButtons = catalog.map(track =>
-   <View key={track.cat}><TouchableOpacity
-      style={[styles.button, { backgroundColor: track.color }]}
-      onPress={() => { handlePress(track) }}
-      underlayColor='#000'
-      >
-      <Text style={[styles.copy, { fontFamily: 'Menlo' }]}>{track.description}</Text>
-    </TouchableOpacity>
-      <Text style={styles.artist}>[by {track.artist}]</Text></View>
+    <View key={track.cat}>
+      <TouchableOpacity onPress={() => { handlePress(track) }}>
+        <LinearGradient
+          colors={track.color}
+          style={[styles.button]}>
+          <Text style={styles.copy}>{track.description}</Text></LinearGradient>
+      </TouchableOpacity>
+      <Text style={styles.artist}>[by {track.artist}]</Text>
+    </View >
   );
 
   const legalStyle = {
     ...styles.copy,
-    fontFamily: 'Menlo',
-    fontSize: 8,
+    fontSize: 9,
+    opacity: '0.5',
     paddingTop: 50,
   }
 
   return (
+
     <View style={styles.container}>
-      <Logo/>
+      <Logo />
       {playButtons}
       <TouchableOpacity
         onPress={() => navigate('About')}>
-        <Text style={styles.about}>about</Text>
+        <Text style={[styles.about, styles.fuzzBlue]}>about</Text>
       </TouchableOpacity>
       <Text style={legalStyle}>fuzzzel v. 1.0.0 © 2024 1000timesyes</Text>
-    </View>
+    </View >
+
   );
 }

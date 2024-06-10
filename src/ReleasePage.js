@@ -37,11 +37,12 @@ export default function ReleasePage({ route, navigation }) {
             </GestureDetector>
             <Pressable onPress={() => { setModalVisible(true) }}>
                 <Text style={styles.nowPlaying}>{nowPlaying.artist}</Text>
-                <Text style={[styles.nowPlaying, { fontFamily: 'Menlo', fontSize: 14 }]}>"{nowPlaying.title}"</Text>
-                <Text style={styles.nowPlaying}> <Icon
+                <Text style={[styles.nowPlaying, { fontSize: 14, fontWeight: '400' }]}>"{nowPlaying.title}"</Text>
+                <Text style={styles.nowPlaying}> 
+                    <Icon
                     name='info-circle'
                     type='font-awesome'
-                    color='#80aaed'
+                    color={styles.fuzzBlue.color}
                     style={{ paddingTop: 15, paddingRight: 10 }}
                 /></Text>
             </Pressable>
@@ -55,34 +56,25 @@ export default function ReleasePage({ route, navigation }) {
                         setModalVisible(!modalVisible);
                     }}
                 >
-
                     <Pressable style={styles.centeredView}
-                        onPress={() => {setModalVisible(!modalVisible)
-                            console.log("close")}
-                            
+                        onPress={() => {
+                            setModalVisible(!modalVisible)
+                            console.log("close")
+                        }
                         }>
-
-
-
-
-
                         <View style={styles.modalView}>
-
                             <Text><Icon
                                 name='close'
                                 type='font-awesome'
-                                color='#80aaed'
+                                style={styles.icon}
+                                color={styles.fuzzBlue.color}
                             /></Text>
-
                             <ScrollView>
-                                <Text style={styles.copy}>{nowPlaying.info}</Text>
-                                <Text style={[styles.copy, { color: '#80aaed', alignSelf: 'flex-end' }]}>
-                                    — {nowPlaying.artist}</Text></ScrollView>
+                                <Text style={[styles.copy, { paddingTop: 20 }]}>{nowPlaying.info}</Text>
+                                <Text style={[styles.nowPlaying, styles.fuzzBlue, { alignSelf: 'flex-end' }]}>
 
+                                    — {nowPlaying.attr ? nowPlaying.attr + ', ' : ''}{nowPlaying.artist}</Text></ScrollView>
                         </View>
-
-
-
                     </Pressable>
                 </Modal>
             </View>
