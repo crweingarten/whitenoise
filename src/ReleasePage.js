@@ -38,46 +38,46 @@ export default function ReleasePage({ route, navigation }) {
             <Pressable onPress={() => { setModalVisible(true) }}>
                 <Text style={styles.nowPlaying}>{nowPlaying.artist}</Text>
                 <Text style={[styles.nowPlaying, { fontSize: 14, fontWeight: '400' }]}>"{nowPlaying.title}"</Text>
-                <Text style={styles.nowPlaying}> 
-                    <Icon
+                <Text style={styles.nowPlaying}> <Icon
                     name='info-circle'
                     type='font-awesome'
                     color={styles.fuzzBlue.color}
                     style={{ paddingTop: 15, paddingRight: 10 }}
                 /></Text>
             </Pressable>
-            <View style={styles.centeredView}>
-                <Modal
-                    animationType="fade"
-                    transparent={true}
-                    visible={modalVisible}
-                    onBackdropPress={() => this.setModalVisible(false)}
-                    onRequestClose={() => {
-                        setModalVisible(!modalVisible);
-                    }}
-                >
-                    <Pressable style={styles.centeredView}
-                        onPress={() => {
-                            setModalVisible(!modalVisible)
-                            console.log("close")
-                        }
-                        }>
-                        <View style={styles.modalView}>
+            <Modal
+                animationType="fade"
+                transparent={true}
+                visible={modalVisible}
+                onBackdropPress={() => this.setModalVisible(false)}
+                onRequestClose={() => {
+                    setModalVisible(!modalVisible);
+                }}
+            >
+                <View style={styles.centeredView}>
+                    <View style={styles.modalView}>
+                        <Pressable
+                            onPress={() => {
+                                setModalVisible(!modalVisible)
+                            }
+                            }>
                             <Text><Icon
                                 name='close'
                                 type='font-awesome'
                                 style={styles.icon}
                                 color={styles.fuzzBlue.color}
-                            /></Text>
-                            <ScrollView>
-                                <Text style={[styles.copy, { paddingTop: 20 }]}>{nowPlaying.info}</Text>
-                                <Text style={[styles.nowPlaying, styles.fuzzBlue, { alignSelf: 'flex-end' }]}>
-
-                                    — {nowPlaying.attr ? nowPlaying.attr + ', ' : ''}{nowPlaying.artist}</Text></ScrollView>
-                        </View>
-                    </Pressable>
-                </Modal>
-            </View>
+                            /></Text></Pressable>
+                        <ScrollView>
+                            <Text style={[styles.copy, { paddingTop: 20 }]}>{nowPlaying.info}</Text>
+                            <Text style={[styles.nowPlaying, styles.fuzzBlue, { alignSelf: 'flex-end' }]}>
+                                — {nowPlaying.attr ? nowPlaying.attr + ', ' : ''}{nowPlaying.artist}</Text></ScrollView>
+                    </View></View>
+            </Modal>
         </View>
+
+
+
+
+
     );
 }

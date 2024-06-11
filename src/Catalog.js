@@ -34,7 +34,7 @@ export default catalog = [
         artist: 'clipping.',
         title: 'A Place to Be Still',
         path: require(`../assets/clipping2.mp3`),
-        cover: require('../assets/2.gif'),
+        cover: require('../assets/clipping.gif'),
         description: 'dark, abyssal',
         color: ['#1D7CFE', '#0048AB', '#013478' ],
         attr: 'William Hutson',
